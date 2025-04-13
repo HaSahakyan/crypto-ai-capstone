@@ -1,0 +1,110 @@
+from scipy.signal import argrelextrema
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+class TargetBuilder:
+    def __init__(self, data, order=5):
+        self.data = data
+        self.order = order
+
+    def binary_direction_target(self, horizon=1, column='close'):
+        self.data['target'] = (self.data[column].shift(-horizon) > self.data[column]).astype(int)
+
+    def regression_target(self, horizon=1, column='close'):
+        future = self.data[column].shift(-horizon)
+        self.data['target_reg'] = (future - self.data[column]) / self.data[column]
+
+    def multi_class_target(self, horizon=1, column='close', threshold=0.001):
+        future = self.data[column].shift(-horizon)
+        return_pct = (future - self.data[column]) / self.data[column]
+        self.data['target_multi'] = 0
+        self.data.loc[return_pct > threshold, 'target_multi'] = 1
+        self.data.loc[return_pct < -threshold, 'target_multi'] = -1
+
+    def custom_target_strategy(self, condition_column='golden_cross'):
+        if condition_column in self.data.columns:
+            self.data['target_signal'] = self.data[condition_column].astype(int)
+        else:
+            raise ValueError(f"{condition_column} not found in dataset")
+
+    def identify_peaks_and_troughs(self, column='close'):
+        close_series = self.data[column].values
+        local_max_idx = argrelextrema(close_series, np.greater, order=self.order)[0]
+        local_min_idx = argrelextrema(close_series, np.less, order=self.order)[0]
+        self.data['is_peak'] = 0
+        self.data['is_trough'] = 0
+        self.data.loc[self.data.iloc[local_max_idx].index, 'is_peak'] = 1
+        self.data.loc[self.data.iloc[local_min_idx].index, 'is_trough'] = 1
+
+    def volatility_filter(self, return_column='return_1', window=5):
+        if return_column not in self.data.columns:
+            self.data[return_column] = self.data['close'].pct_change()
+        volatility = self.data[return_column].rolling(window=window).std()
+        vol_threshold = volatility.mean()
+        self.data['vol_filtered_peak'] = ((self.data['is_peak'] == 1) & (volatility > vol_threshold)).astype(int)
+
+    def lookahead_peak_labels(self, n_steps=10):
+        peak_array = self.data['is_peak'].fillna(0).astype(int).values
+        trough_array = self.data['is_trough'].fillna(0).astype(int).values
+        will_be_peak = np.zeros(len(self.data))
+        will_be_trough = np.zeros(len(self.data))
+        for i in range(len(self.data) - n_steps):
+            if peak_array[i + 1:i + 1 + n_steps].sum() > 0:
+                will_be_peak[i] = 1
+            if trough_array[i + 1:i + 1 + n_steps].sum() > 0:
+                will_be_trough[i] = 1
+        self.data[f'will_be_peak_in_{n_steps}'] = will_be_peak
+        self.data[f'will_be_trough_in_{n_steps}'] = will_be_trough
+
+    def uptrend_composite_target(self, n_steps=10, threshold=0.005):
+        """
+        Defines 'sharp uptrend' as having a peak within n steps and sufficient return.
+        """
+        if f'will_be_peak_in_{n_steps}' not in self.data.columns:
+            self.lookahead_peak_labels(n_steps=n_steps)
+        future = self.data['close'].shift(-n_steps)
+        future_return = (future - self.data['close']) / self.data['close']
+        self.data['sharp_uptrend'] = (
+            (self.data[f'will_be_peak_in_{n_steps}'] == 1) &
+            (future_return > threshold)
+        ).astype(int)
+
+    def add_target_lags(self, base_col='target', lags=[1, 2]):
+        for lag in lags:
+            self.data[f'{base_col}_lag_{lag}'] = self.data[base_col].shift(lag)
+
+    def drop_nans(self):
+        self.data.dropna(inplace=True)
+
+    def plot_peaks_and_troughs(self, column='close', title='Price with Peaks and Troughs'):
+        plt.figure(figsize=(14, 6))
+        plt.plot(self.data[column], label='Close', color='black')
+        plt.scatter(self.data[self.data['is_peak'] == 1].index, self.data[self.data['is_peak'] == 1][column], color='green', marker='^', label='Peaks')
+        plt.scatter(self.data[self.data['is_trough'] == 1].index, self.data[self.data['is_trough'] == 1][column], color='red', marker='v', label='Troughs')
+        plt.title(title)
+        plt.xlabel('Time')
+        plt.ylabel('Price')
+        plt.legend()
+        plt.grid(True)
+        plt.tight_layout()
+        plt.show()
+
+    def plot_targets(self, column='close'):
+        plt.figure(figsize=(14, 6))
+        plt.plot(self.data[column], label='Close Price', color='blue')
+        if 'target' in self.data.columns:
+            plt.scatter(self.data[self.data['target'] == 1].index, self.data[self.data['target'] == 1][column], color='green', label='Target=1', alpha=0.6)
+            plt.scatter(self.data[self.data['target'] == 0].index, self.data[self.data['target'] == 0][column], color='red', label='Target=0', alpha=0.3)
+        if 'sharp_uptrend' in self.data.columns:
+            plt.scatter(self.data[self.data['sharp_uptrend'] == 1].index, self.data[self.data['sharp_uptrend'] == 1][column], color='orange', label='Sharp Uptrend', alpha=0.5)
+        plt.title('Targets Overlay')
+        plt.legend()
+        plt.grid(True)
+        plt.tight_layout()
+        plt.xlim(1000, 1200)  # Use a sharp upward or downward trend section
+
+        plt.show()
+
+    def get_data(self):
+        return self.data
