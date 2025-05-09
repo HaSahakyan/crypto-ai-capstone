@@ -1,0 +1,21 @@
+Model: ensemble_multiclass
+Dataset: daily
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00        15
+           1       0.77      0.94      0.85       103
+           2       0.20      0.07      0.10        15
+
+    accuracy                           0.74       133
+   macro avg       0.32      0.34      0.32       133
+weighted avg       0.62      0.74      0.67       133
+
+Confusion Matrix:
+[[ 0, 15,  0],
+     [ 2, 97,  4],
+     [ 0, 14,  1]]
+
+Accuracy: 0.7368
+QWK: 0.0541

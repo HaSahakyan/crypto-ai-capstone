@@ -1,0 +1,18 @@
+Model: ensemble_two_classes_smote
+Dataset: daily_sentiment
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.86      0.90      0.88        21
+           2       0.00      0.00      0.00         3
+
+    accuracy                           0.79        24
+   macro avg       0.43      0.45      0.44        24
+weighted avg       0.76      0.79      0.77        24
+
+Confusion Matrix:
+[[19,  2],
+     [ 3,  0]]
+
+Accuracy: 0.7917

@@ -1,0 +1,21 @@
+Model: ensemble_multiclass
+Dataset: hourly_sentiment
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00       234
+           1       0.85      0.99      0.92      2722
+           2       0.26      0.03      0.06       244
+
+    accuracy                           0.85      3200
+   macro avg       0.37      0.34      0.32      3200
+weighted avg       0.74      0.85      0.78      3200
+
+Confusion Matrix:
+[[   0,  234,    0],
+     [   0, 2699,   23],
+     [   0,  236,    8]]
+
+Accuracy: 0.8459
+QWK: 0.0311

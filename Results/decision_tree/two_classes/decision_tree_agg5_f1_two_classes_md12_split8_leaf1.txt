@@ -1,0 +1,16 @@
+=== Decision Tree Results for dataset: agg5 (Scoring: f1_two_classes) ===
+Best Parameters: {'criterion': 'gini', 'max_depth': 12, 'min_samples_leaf': 1, 'min_samples_split': 8}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.98      0.92      0.95      7113
+           2       0.21      0.52      0.30       299
+
+    accuracy                           0.90      7412
+   macro avg       0.59      0.72      0.62      7412
+weighted avg       0.95      0.90      0.92      7412
+
+Accuracy: 0.9025
+Macro-averaged Recall: 0.7185
+Macro-averaged F1-score: 0.6238

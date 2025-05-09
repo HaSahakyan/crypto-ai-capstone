@@ -1,0 +1,19 @@
+Model: ensemble_two_classes
+Dataset: agg10
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.95      1.00      0.97     17368
+           2       0.38      0.01      0.02       921
+
+    accuracy                           0.95     18289
+   macro avg       0.66      0.51      0.50     18289
+weighted avg       0.92      0.95      0.93     18289
+
+Confusion Matrix:
+[[17350,    18],
+     [  910,    11]]
+
+Accuracy: 0.9493
+QWK: 0.0201

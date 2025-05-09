@@ -1,0 +1,16 @@
+=== Xgboost_two_classes Results for dataset: hourly ===
+Best Parameters: {'n_estimators': 700, 'max_depth': 15, 'learning_rate': 0.1168444070873081, 'subsample': 0.992594221103495, 'colsample_bytree': 0.8441810759831474, 'gamma': 3.1918229612758147, 'reg_alpha': 0.8317192734324496, 'reg_lambda': 0.39473158598506286, 'min_child_weight': 3, 'scale_pos_weight': 9.143476632684076, 'objective': 'binary:logistic', 'eval_metric': 'logloss', 'n_jobs': -1, 'random_state': 42}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.97      0.89      0.93       548
+           2       0.34      0.70      0.45        46
+
+    accuracy                           0.87       594
+   macro avg       0.65      0.79      0.69       594
+weighted avg       0.92      0.87      0.89       594
+
+Accuracy: 0.8704
+Macro-averaged Recall: 0.7903
+Macro-averaged F1-score: 0.6902

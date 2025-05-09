@@ -1,0 +1,14 @@
+=== Decision Tree Results for dataset: agg5 (Scoring: simple_two_classes_critgini_cwnone) ===
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.96      0.99      0.97      7113
+           2       0.18      0.06      0.09       299
+
+    accuracy                           0.95      7412
+   macro avg       0.57      0.52      0.53      7412
+weighted avg       0.93      0.95      0.94      7412
+
+Accuracy: 0.9513
+Macro-averaged Recall: 0.5245
+Macro-averaged F1-score: 0.5328

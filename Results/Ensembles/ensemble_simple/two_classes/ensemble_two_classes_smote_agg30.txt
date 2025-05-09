@@ -1,0 +1,18 @@
+Model: ensemble_two_classes_smote
+Dataset: agg30
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.96      0.92      0.94      1120
+           2       0.28      0.41      0.33        81
+
+    accuracy                           0.89      1201
+   macro avg       0.62      0.66      0.63      1201
+weighted avg       0.91      0.89      0.90      1201
+
+Confusion Matrix:
+[[1033,   87],
+     [  48,   33]]
+
+Accuracy: 0.8876

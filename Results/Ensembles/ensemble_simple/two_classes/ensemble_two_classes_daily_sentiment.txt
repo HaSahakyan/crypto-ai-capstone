@@ -1,0 +1,18 @@
+Model: ensemble_two_classes
+Dataset: daily_sentiment
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.88      1.00      0.93        21
+           2       0.00      0.00      0.00         3
+
+    accuracy                           0.88        24
+   macro avg       0.44      0.50      0.47        24
+weighted avg       0.77      0.88      0.82        24
+
+Confusion Matrix:
+[[21,  0],
+     [ 3,  0]]
+
+Accuracy: 0.8750

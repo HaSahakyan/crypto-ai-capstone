@@ -1,0 +1,16 @@
+=== Decision Tree Results for dataset: daily (Scoring: f1_two_classes) ===
+Best Parameters: {'criterion': 'gini', 'max_depth': 7, 'min_samples_leaf': 1, 'min_samples_split': 2}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.94      0.71      0.81        21
+           2       0.25      0.67      0.36         3
+
+    accuracy                           0.71        24
+   macro avg       0.59      0.69      0.59        24
+weighted avg       0.85      0.71      0.75        24
+
+Accuracy: 0.7083
+Macro-averaged Recall: 0.6905
+Macro-averaged F1-score: 0.5872

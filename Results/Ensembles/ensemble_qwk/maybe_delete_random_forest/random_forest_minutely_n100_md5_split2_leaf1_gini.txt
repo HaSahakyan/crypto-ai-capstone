@@ -1,0 +1,15 @@
+=== Random Forest Results for dataset: minutely ===
+Best Parameters (F1 on -1 & 1): {'criterion': 'gini', 'max_depth': 5, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.03      0.74      0.05       369
+           0       1.00      0.60      0.75     37365
+           1       0.13      1.00      0.23       666
+
+    accuracy                           0.61     38400
+   macro avg       0.38      0.78      0.34     38400
+weighted avg       0.97      0.61      0.73     38400
+
+Accuracy: 0.6095

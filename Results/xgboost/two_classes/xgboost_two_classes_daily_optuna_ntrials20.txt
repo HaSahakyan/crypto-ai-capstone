@@ -1,0 +1,16 @@
+=== Xgboost_two_classes Results for dataset: daily ===
+Best Parameters: {'n_estimators': 850, 'max_depth': 15, 'learning_rate': 0.1359993865839173, 'subsample': 0.9951408117139173, 'colsample_bytree': 0.7091930943433549, 'gamma': 2.5698560911671606, 'reg_alpha': 0.2778495072118253, 'reg_lambda': 0.23839451474756596, 'min_child_weight': 6, 'scale_pos_weight': 7.20513180240832, 'objective': 'binary:logistic', 'eval_metric': 'logloss', 'n_jobs': -1, 'random_state': 42}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.95      0.90      0.93        21
+           2       0.50      0.67      0.57         3
+
+    accuracy                           0.88        24
+   macro avg       0.72      0.79      0.75        24
+weighted avg       0.89      0.88      0.88        24
+
+Accuracy: 0.8750
+Macro-averaged Recall: 0.7857
+Macro-averaged F1-score: 0.7491

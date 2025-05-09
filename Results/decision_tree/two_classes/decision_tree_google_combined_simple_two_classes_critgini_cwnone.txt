@@ -1,0 +1,14 @@
+=== Decision Tree Results for dataset: google_combined (Scoring: simple_two_classes_critgini_cwnone) ===
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.89      0.81      0.85        21
+           2       0.20      0.33      0.25         3
+
+    accuracy                           0.75        24
+   macro avg       0.55      0.57      0.55        24
+weighted avg       0.81      0.75      0.77        24
+
+Accuracy: 0.7500
+Macro-averaged Recall: 0.5714
+Macro-averaged F1-score: 0.5500
