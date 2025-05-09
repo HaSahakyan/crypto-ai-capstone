@@ -1,0 +1,14 @@
+=== Random Forest Results for dataset: daily_sentiment ===
+Best Parameters (F1 for classes 1 & 2): {'criterion': 'gini', 'max_depth': 5, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.88      1.00      0.93        21
+           2       0.00      0.00      0.00         3
+
+    accuracy                           0.88        24
+   macro avg       0.44      0.50      0.47        24
+weighted avg       0.77      0.88      0.82        24
+
+Accuracy: 0.8750

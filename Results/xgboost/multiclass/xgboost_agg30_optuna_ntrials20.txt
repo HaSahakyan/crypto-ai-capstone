@@ -1,0 +1,17 @@
+=== Xgboost Results for dataset: agg30 ===
+Best Parameters: {'n_estimators': 800, 'max_depth': 4, 'learning_rate': 0.299026558282305, 'subsample': 0.613027687272647, 'colsample_bytree': 0.8046618815345956, 'gamma': 1.8050052341195864, 'reg_alpha': 0.7788039353662521, 'reg_lambda': 0.3057522307680837, 'min_child_weight': 1, 'scale_pos_weight': 4.60595437649159, 'objective': 'multi:softmax', 'eval_metric': 'mlogloss', 'n_jobs': -1, 'random_state': 42}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00        84
+           1       0.88      0.97      0.93      1115
+           2       0.42      0.27      0.33        81
+
+    accuracy                           0.86      1280
+   macro avg       0.44      0.41      0.42      1280
+weighted avg       0.80      0.86      0.83      1280
+
+Accuracy: 0.8641
+Macro-averaged Recall: 0.4146
+Macro-averaged F1-score: 0.4188

@@ -1,0 +1,21 @@
+Model: ensemble_multiclass
+Dataset: agg10
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00       911
+           1       0.90      1.00      0.95     17368
+           2       0.38      0.01      0.01       921
+
+    accuracy                           0.90     19200
+   macro avg       0.43      0.33      0.32     19200
+weighted avg       0.84      0.90      0.86     19200
+
+Confusion Matrix:
+[[    0,   911,     0],
+     [    0, 17360,     8],
+     [    0,   916,     5]]
+
+Accuracy: 0.9044
+QWK: 0.0054

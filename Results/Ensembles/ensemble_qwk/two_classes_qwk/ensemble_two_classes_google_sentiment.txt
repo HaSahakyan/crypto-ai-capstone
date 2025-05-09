@@ -1,0 +1,19 @@
+Model: ensemble_two_classes
+Dataset: google_sentiment
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.88      0.99      0.93       103
+           2       0.50      0.07      0.12        15
+
+    accuracy                           0.87       118
+   macro avg       0.69      0.53      0.52       118
+weighted avg       0.83      0.87      0.83       118
+
+Confusion Matrix:
+[[102,   1],
+     [ 14,   1]]
+
+Accuracy: 0.8729
+QWK: 0.0904

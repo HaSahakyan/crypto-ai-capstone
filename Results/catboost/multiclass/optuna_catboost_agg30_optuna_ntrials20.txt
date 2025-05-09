@@ -1,0 +1,24 @@
+Model: optuna_catboost
+Dataset: agg30
+
+Best Parameters: {'depth': 10, 'iterations': 500, 'learning_rate': 0.19304276372983614, 'l2_leaf_reg': 1.7352562206007112, 'bagging_temperature': 0.9525079686257578, 'random_strength': 1.6289142173172146, 'loss_function': 'MultiClass', 'random_seed': 42, 'verbose': 0}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.50      0.01      0.02        84
+           1       0.88      0.99      0.93      1115
+           2       0.60      0.15      0.24        81
+
+    accuracy                           0.87      1280
+   macro avg       0.66      0.38      0.40      1280
+weighted avg       0.84      0.87      0.83      1280
+
+Confusion Matrix:
+[[   1,   83,    0],
+     [   1, 1106,    8],
+     [   0,   69,   12]]
+
+Accuracy: 0.8742
+Macro-averaged Recall: 0.3840
+Macro-averaged F1-score: 0.3977

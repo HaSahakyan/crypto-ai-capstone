@@ -1,0 +1,15 @@
+=== Xgboost Results for dataset: agg30 ===
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.33      0.01      0.02        84
+           1       0.88      0.98      0.93      1115
+           2       0.34      0.12      0.18        81
+
+    accuracy                           0.86      1280
+   macro avg       0.52      0.37      0.38      1280
+weighted avg       0.81      0.86      0.82      1280
+
+Accuracy: 0.8633
+Macro-averaged Recall: 0.3722
+Macro-averaged F1-score: 0.3769

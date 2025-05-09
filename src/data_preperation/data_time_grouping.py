@@ -17,6 +17,10 @@ class CandleAggregator:
         df_sorted = df.sort_values(by='timestamp').reset_index(drop=True)
         n_groups = len(df_sorted) // self.group_length
 
+        ##adding
+        column_list = list(df_sorted.columns)
+
+
         aggregated = []
         for i in range(n_groups):
             group = df_sorted.iloc[i * self.group_length : (i + 1) * self.group_length]
@@ -29,6 +33,16 @@ class CandleAggregator:
                 'volume': group['volume'].sum(),
                 'datetime': group['datetime'].iloc[0],
             }
+
+            # Sentiment features handling
+            for col in column_list:
+                if col.endswith('_prev'):
+                    row[col] = group[col].iloc[0]
+                elif col.endswith('_avg'):
+                    row[col] = group[col].mean()
+                elif '_sentiment_score' in col:
+                    row[col] = group[col].mean()
+
             aggregated.append(row)
 
         return pd.DataFrame(aggregated)

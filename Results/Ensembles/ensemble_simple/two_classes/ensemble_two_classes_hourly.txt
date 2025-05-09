@@ -1,0 +1,18 @@
+Model: ensemble_two_classes
+Dataset: hourly
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.93      0.99      0.96       548
+           2       0.50      0.17      0.26        46
+
+    accuracy                           0.92       594
+   macro avg       0.72      0.58      0.61       594
+weighted avg       0.90      0.92      0.90       594
+
+Confusion Matrix:
+[[540,   8],
+     [ 38,   8]]
+
+Accuracy: 0.9226

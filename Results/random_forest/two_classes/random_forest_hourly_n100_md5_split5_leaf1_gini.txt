@@ -1,0 +1,14 @@
+=== Random Forest Results for dataset: hourly ===
+Best Parameters (F1 for classes 1 & 2): {'criterion': 'gini', 'max_depth': 5, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.99      0.80      0.89       548
+           2       0.28      0.91      0.43        46
+
+    accuracy                           0.81       594
+   macro avg       0.64      0.86      0.66       594
+weighted avg       0.94      0.81      0.85       594
+
+Accuracy: 0.8114

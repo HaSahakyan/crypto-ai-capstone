@@ -1,0 +1,14 @@
+=== Decision Tree Results for dataset: agg30 (Scoring: simple_two_classes_critentropy_cwbalanced) ===
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.96      0.92      0.94      1120
+           2       0.29      0.44      0.35        81
+
+    accuracy                           0.89      1201
+   macro avg       0.63      0.68      0.65      1201
+weighted avg       0.91      0.89      0.90      1201
+
+Accuracy: 0.8901
+Macro-averaged Recall: 0.6834
+Macro-averaged F1-score: 0.6464

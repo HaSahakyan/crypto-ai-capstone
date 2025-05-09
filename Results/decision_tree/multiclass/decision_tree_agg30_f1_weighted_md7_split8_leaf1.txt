@@ -1,0 +1,17 @@
+=== Decision Tree Results for dataset: agg30 (Scoring: f1_weighted) ===
+Best Parameters: {'criterion': 'gini', 'max_depth': 7, 'min_samples_leaf': 1, 'min_samples_split': 8}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.00      0.00      0.00        84
+           0       0.88      0.94      0.91      1115
+           1       0.30      0.27      0.29        81
+
+    accuracy                           0.83      1280
+   macro avg       0.39      0.40      0.40      1280
+weighted avg       0.79      0.83      0.81      1280
+
+Accuracy: 0.8328
+Macro-averaged Recall: 0.4026
+Macro-averaged F1-score: 0.3976

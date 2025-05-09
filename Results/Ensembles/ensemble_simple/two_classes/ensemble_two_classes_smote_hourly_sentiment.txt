@@ -1,0 +1,18 @@
+Model: ensemble_two_classes_smote
+Dataset: hourly_sentiment
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.94      0.90      0.92       548
+           2       0.23      0.37      0.29        46
+
+    accuracy                           0.86       594
+   macro avg       0.59      0.63      0.60       594
+weighted avg       0.89      0.86      0.87       594
+
+Confusion Matrix:
+[[492,  56],
+     [ 29,  17]]
+
+Accuracy: 0.8569

@@ -1,0 +1,15 @@
+=== Xgboost Results for dataset: hourly ===
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00        48
+           1       0.86      0.98      0.92       546
+           2       0.42      0.17      0.25        46
+
+    accuracy                           0.85       640
+   macro avg       0.43      0.38      0.39       640
+weighted avg       0.76      0.85      0.80       640
+
+Accuracy: 0.8453
+Macro-averaged Recall: 0.3834
+Macro-averaged F1-score: 0.3871

@@ -1,0 +1,20 @@
+Model: simple_catboost_two_classes_smote
+Dataset: agg30
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.94      0.99      0.96      1120
+           2       0.45      0.11      0.18        81
+
+    accuracy                           0.93      1201
+   macro avg       0.69      0.55      0.57      1201
+weighted avg       0.91      0.93      0.91      1201
+
+Confusion Matrix:
+[[1109,   11],
+     [  72,    9]]
+
+Accuracy: 0.9309
+Macro-averaged Recall: 0.5506
+Macro-averaged F1-score: 0.5711

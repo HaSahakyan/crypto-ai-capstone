@@ -1,0 +1,22 @@
+Model: optuna_catboost_two_classes_smote
+Dataset: hourly
+
+Best Parameters: {'depth': 4, 'iterations': 700, 'learning_rate': 0.2544954823672921, 'l2_leaf_reg': 5.5198086593867846, 'bagging_temperature': 1.2888099511793834, 'random_strength': 1.857086564332193, 'loss_function': 'Logloss', 'random_seed': 42, 'verbose': 0}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.94      0.97      0.96       548
+           2       0.48      0.30      0.37        46
+
+    accuracy                           0.92       594
+   macro avg       0.71      0.64      0.67       594
+weighted avg       0.91      0.92      0.91       594
+
+Confusion Matrix:
+[[533,  15],
+     [ 32,  14]]
+
+Accuracy: 0.9209
+Macro-averaged Recall: 0.6385
+Macro-averaged F1-score: 0.6656

@@ -1,0 +1,14 @@
+=== Random Forest Results for dataset: agg30 ===
+Best Parameters (F1 for classes 1 & 2): {'criterion': 'gini', 'max_depth': 5, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.99      0.78      0.87      1120
+           2       0.23      0.88      0.36        81
+
+    accuracy                           0.79      1201
+   macro avg       0.61      0.83      0.62      1201
+weighted avg       0.94      0.79      0.84      1201
+
+Accuracy: 0.7885

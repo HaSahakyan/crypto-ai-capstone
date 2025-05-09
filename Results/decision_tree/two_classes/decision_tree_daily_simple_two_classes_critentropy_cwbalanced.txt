@@ -1,0 +1,14 @@
+=== Decision Tree Results for dataset: daily (Scoring: simple_two_classes_critentropy_cwbalanced) ===
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.88      1.00      0.93        21
+           2       0.00      0.00      0.00         3
+
+    accuracy                           0.88        24
+   macro avg       0.44      0.50      0.47        24
+weighted avg       0.77      0.88      0.82        24
+
+Accuracy: 0.8750
+Macro-averaged Recall: 0.5000
+Macro-averaged F1-score: 0.4667
